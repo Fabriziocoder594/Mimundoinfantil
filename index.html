@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I.E.P. Mi Mundo Infantil</title>
+  <meta name="description" content="Institución Educativa Particular Mi Mundo Infantil, Huancayo. Educación integral y personalizada.">
+  <link rel="icon" href="img/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <a href="#inicio" class="logo">
+      <img src="img/logo.png" alt="Logo Mi Mundo Infantil" class="logo-img">
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav" id="nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#valores">Valores</a>
+      <a href="#evento">Evento</a>
+      <a href="#proyecto">Proyecto</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- INICIO -->
+    <section id="inicio" class="hero">
+      <div class="hero-text">
+        <p class="tag">Huancayo · Perú</p>
+        <h1>Educación integral y personalizada</h1>
+        <p>Un entorno seguro y estimulante donde niños y niñas descubren sus talentos, fortalecen su autoestima y se preparan para un futuro exitoso.</p>
+        <a href="#contacto" class="btn">Contáctanos</a>
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section id="nosotros" class="section">
+      <h2>Quiénes somos</h2>
+      <p>La Institución Educativa Particular <strong>Mi Mundo Infantil</strong>, ubicada en la Prolongación Ica N.° 269, Huancayo, promueve el aprendizaje activo, la creatividad y el desarrollo de valores.</p>
+      <p>Formamos niños y niñas con pensamiento crítico, liderazgo y compromiso con su comunidad, bajo la dirección de la <strong>Lic. Milagros Samalvides Santillana</strong>.</p>
+    </section>
+
+    <!-- VALORES -->
+    <section id="valores" class="section alt">
+      <h2>Lo que nos distingue</h2>
+      <div class="cards">
+        <article class="card">
+          <span class="icon">🎨</span>
+          <h3>Creatividad</h3>
+          <p>Fomentamos la expresión y la imaginación en cada actividad.</p>
+        </article>
+        <article class="card">
+          <span class="icon">🧠</span>
+          <h3>Pensamiento crítico</h3>
+          <p>Aprendizaje activo para que los estudiantes razonen y cuestionen.</p>
+        </article>
+        <article class="card">
+          <span class="icon">🤝</span>
+          <h3>Valores</h3>
+          <p>Respeto, responsabilidad y compromiso con la comunidad.</p>
+        </article>
+        <article class="card">
+          <span class="icon">🛡️</span>
+          <h3>Entorno seguro</h3>
+          <p>Un espacio cuidado donde cada niño se siente protegido.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- EVENTO / GALERÍA -->
+    <section id="evento" class="section">
+      <h2>CREATECH Summit 2026</h2>
+      <!-- Cambia el nombre y la descripción del evento -->
+      <p>Un evento de tecnología, innovación e inteligencia artificial.
+
+Participamos en el CREATECH Summit 2026, realizado los días 21, 22 y 23 de octubre, donde se desarrollaron ponencias sobre inteligencia artificial, agentes autónomos y ciencia de datos. Durante los tres días conocimos nuevas herramientas, ideas y aplicaciones de la tecnología en el mundo actual.</p>
+      <div class="gallery" id="gallery">
+        <!-- Guarda tus fotos en la carpeta img/ y cambia los nombres aquí. Copia un <figure> por cada foto. -->
+        <figure><img src="img/DIA 1 IC.jpeg" alt="Foto 1 del evento" loading="lazy"></figure>
+        <figure><img src="img/DIA 2 IC.jpeg" alt="Foto 2 del evento" loading="lazy"></figure>
+        <figure><img src="img/DIA 3 IC.jpeg" alt="Foto 3 del evento" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <!-- PROYECTO / OTRO REPOSITORIO -->
+    <section id="proyecto" class="section alt">
+      <h2>Nuestro sistema de notas</h2>
+      <p>Aplicación web para automatizar la Institución</p>
+      <!-- LÍNEA DEL OTRO REPOSITORIO: cambia el enlace por el de tu repositorio -->
+      <a class="btn" href="https://github.com/TU_USUARIO/OTRO_REPOSITORIO" target="_blank" rel="noopener">Ver repositorio en GitHub</a>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section">
+      <h2>Contacto</h2>
+      <ul class="contact-list">
+        <li>📍 Prolongación Ica N.° 269, Huancayo</li>
+        <li>✉️ <a href="mailto:mimundoinfantilsm@gmail.com">mimundoinfantilsm@gmail.com</a></li>
+        <li>🧾 RUC: 20608576755</li>
+        <li>📘 <a href="https://www.facebook.com/profile.php?id=100063646085110&locale=es_LA" target="_blank" rel="noopener">Síguenos en Facebook</a></li>
+      </ul>
+
+      <form id="contactForm" class="form" novalidate>
+        <label>Nombre
+          <input type="text" id="nombre" required>
+        </label>
+        <label>Correo
+          <input type="email" id="correo" required>
+        </label>
+        <label>Mensaje
+          <textarea id="mensaje" rows="4" required></textarea>
+        </label>
+        <button type="submit" class="btn">Enviar</button>
+        <p id="formMsg" class="form-msg" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> I.E.P. Mi Mundo Infantil · Huancayo, Perú</p>
+  </footer>
+
+  <!-- Visor de imagen ampliada -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lb-close" id="lbClose" aria-label="Cerrar">×</button>
+    <img id="lbImg" alt="">
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

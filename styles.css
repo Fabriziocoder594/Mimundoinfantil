@@ -1,0 +1,162 @@
+/* Colores tomados del logo de Mi Mundo Infantil */
+:root {
+  --amarillo: #ffbe00;      /* fondo del logo */
+  --crema: #fff4cc;
+  --azul: #19a0e3;          /* el planeta */
+  --azul-oscuro: #0b6aa3;
+  --verde: #6cc27a;         /* continentes */
+  --rojo: #c93a34;          /* corazón */
+  --naranja: #f58b4c;       /* polo del niño */
+  --rosa: #e84a8a;
+  --marino: #1d2147;        /* short y cabello */
+  --texto: #1d2147;
+  --arcoiris: linear-gradient(90deg, #e84a8a, #f58b4c, #ffbe00, #6cc27a, #19a0e3);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 80px; } /* evita que la barra tape el título */
+
+body {
+  font-family: "Fredoka", "Segoe UI", system-ui, sans-serif;
+  color: var(--texto);
+  line-height: 1.6;
+  background: #fff;
+}
+
+a { color: var(--azul-oscuro); }
+
+/* Barra superior (mismo amarillo del logo) */
+.header {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 6px 24px;
+  background: var(--amarillo);
+  border-bottom: 5px solid transparent;
+  border-image: var(--arcoiris) 1;
+}
+.logo { display: block; width: 76px; height: 76px; overflow: hidden; border-radius: 18px; text-decoration: none; }
+.logo-img { width: 100px; height: 100px; margin: -12px; display: block; } /* recorta el borde amarillo para que el logo se vea más grande */
+.nav { display: flex; gap: 8px; }
+.nav a {
+  text-decoration: none; color: var(--marino); font-weight: 600;
+  padding: 8px 16px; border-radius: 999px;
+  transition: background .2s, color .2s;
+}
+.nav a:hover { background: rgba(255,255,255,.55); }
+.nav a.active { background: var(--marino); color: #fff; }
+.menu-btn { display: none; background: none; border: 0; font-size: 1.8rem; color: var(--marino); cursor: pointer; }
+
+/* Portada */
+.hero {
+  min-height: 72vh;
+  display: flex; align-items: center;
+  padding: 64px 24px 96px;
+  background: linear-gradient(160deg, #0e86c8 0%, var(--azul-oscuro) 100%);
+  color: #fff;
+  position: relative;
+  clip-path: ellipse(120% 100% at 50% 0%);
+}
+.hero-text { max-width: 680px; margin: 0 auto; text-align: center; }
+.hero h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); line-height: 1.1; margin: 14px 0 18px; font-weight: 700; }
+.hero p { font-size: 1.15rem; }
+.tag {
+  display: inline-block; background: var(--amarillo); color: var(--marino);
+  padding: 4px 18px; border-radius: 999px; font-weight: 600; font-size: .9rem;
+}
+
+/* Botón */
+.btn {
+  display: inline-block; margin-top: 22px;
+  padding: 12px 30px;
+  background: var(--rojo); color: #fff;
+  border: 0; border-radius: 999px;
+  font: inherit; font-weight: 600; text-decoration: none; cursor: pointer;
+  box-shadow: 0 5px 0 #8f2622;
+  transition: transform .15s, box-shadow .15s;
+}
+.btn:hover { transform: translateY(2px); box-shadow: 0 3px 0 #8f2622; }
+
+/* Secciones */
+.section { max-width: 1000px; margin: 0 auto; padding: 64px 24px; }
+.section.alt {
+  max-width: none; background: var(--crema);
+  padding-left: max(24px, calc((100% - 952px) / 2));
+  padding-right: max(24px, calc((100% - 952px) / 2));
+}
+.section h2 { font-size: 2rem; color: var(--marino); margin-bottom: 20px; position: relative; padding-bottom: 12px; }
+.section h2::after {
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 90px; height: 6px; border-radius: 6px; background: var(--arcoiris);
+}
+.section p { margin-bottom: 12px; }
+
+/* Tarjetas */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 22px; margin-top: 28px; }
+.card {
+  background: #fff; padding: 26px 22px; border-radius: 24px;
+  text-align: center; border-top: 8px solid var(--azul);
+  box-shadow: 0 6px 16px rgba(29,33,71,.12);
+  transition: transform .2s;
+}
+.card:hover { transform: translateY(-6px) rotate(-1deg); }
+.card:nth-child(1) { border-top-color: var(--rosa); }
+.card:nth-child(2) { border-top-color: var(--azul); }
+.card:nth-child(3) { border-top-color: var(--verde); }
+.card:nth-child(4) { border-top-color: var(--naranja); }
+.card .icon { font-size: 2.4rem; }
+.card h3 { margin: 8px 0; color: var(--marino); }
+
+/* Galería */
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; margin-top: 28px; }
+.gallery figure {
+  overflow: hidden; border-radius: 22px; background: #fff;
+  border: 5px solid var(--amarillo);
+  box-shadow: 0 6px 14px rgba(29,33,71,.15);
+}
+.gallery figure:nth-child(4n+2) { border-color: var(--azul); }
+.gallery figure:nth-child(4n+3) { border-color: var(--verde); }
+.gallery figure:nth-child(4n+4) { border-color: var(--naranja); }
+.gallery img { width: 100%; height: 200px; object-fit: cover; display: block; cursor: zoom-in; transition: transform .3s; }
+.gallery img:hover { transform: scale(1.06); }
+.gallery figcaption { padding: 8px 12px; font-size: .92rem; }
+
+/* Contacto */
+.contact-list { list-style: none; margin-bottom: 26px; }
+.contact-list li { margin-bottom: 8px; }
+.form { display: grid; gap: 14px; max-width: 520px; }
+.form label { display: grid; gap: 4px; font-weight: 600; }
+.form input, .form textarea {
+  padding: 11px 14px; border: 3px solid #ffe08a; border-radius: 14px; font: inherit; color: var(--marino);
+}
+.form input:focus, .form textarea:focus { outline: none; border-color: var(--azul); }
+.form-msg { font-weight: 600; min-height: 1.4em; }
+.form-msg.ok { color: #1f7a45; }
+.form-msg.error { color: var(--rojo); }
+
+/* Pie de página */
+.footer {
+  text-align: center; padding: 26px 24px;
+  background: var(--marino); color: #fff;
+  border-top: 6px solid transparent; border-image: var(--arcoiris) 1;
+}
+
+/* Imagen ampliada */
+.lightbox { position: fixed; inset: 0; background: rgba(29,33,71,.9); display: flex; align-items: center; justify-content: center; z-index: 50; }
+.lightbox[hidden] { display: none; }
+.lightbox img { max-width: 92vw; max-height: 88vh; border-radius: 16px; border: 5px solid var(--amarillo); }
+.lb-close { position: absolute; top: 14px; right: 24px; font-size: 2.6rem; color: #fff; background: none; border: 0; cursor: pointer; }
+
+/* Celular */
+@media (max-width: 720px) {
+  .menu-btn { display: block; }
+  .logo { width: 60px; height: 60px; }
+  .logo-img { width: 80px; height: 80px; margin: -10px; }
+  .nav {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; gap: 0; background: var(--amarillo);
+    box-shadow: 0 8px 12px rgba(0,0,0,.15);
+  }
+  .nav.open { display: flex; }
+  .nav a { border-radius: 0; padding: 14px 24px; border-bottom: 1px solid rgba(29,33,71,.15); }
+}
